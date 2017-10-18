@@ -17,6 +17,7 @@ if ($callback_result){
             $amount = convert_helper( $invoice_id, $amount );
             checkCbTransID($trade_no);
             addInvoicePayment($invoiceid,$trade_no,$amount,$fee,$gatewaymodule);
+            logTransaction($gatewaymodule, $_POST, "即时到账 - 同步入账");
             exit("success");
     }
 }

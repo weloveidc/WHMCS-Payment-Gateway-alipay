@@ -18,6 +18,7 @@ if ($callback_result){
             $amount = convert_helper( $invoice_id, $amount );
             checkCbTransID($trade_no);
             addInvoicePayment($invoice_id,$trade_no,$amount,$fee,$gatewaymodule);
+            logTransaction($gatewaymodule, $_GET, "即时到账 - 异步入账");
             exit();
     } else {
         header("Location: ".$CONFIG["SystemURL"]."/viewinvoice.php?id=".$invoice_id);

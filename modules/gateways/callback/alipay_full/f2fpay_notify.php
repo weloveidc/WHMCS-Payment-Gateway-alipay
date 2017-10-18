@@ -31,6 +31,7 @@ if ($result->msg == "Success"){
         $amount = convert_helper( $invoice_id, $amount );
         checkCbTransID($trade_no);
         addInvoicePayment($invoiceid,$trade_no,$amount,$fee,$gatewaymodule);
+        logTransaction($gatewaymodule, $_POST, "当面付 - 异步入账");
         exit("success");
     }
 }
