@@ -1,0 +1,5 @@
+简单说明:
+
+皮肤路径: modules\gateways\class\alipay_full\skin\default
+
+直接将modules覆盖到whmcs根目录下即可
