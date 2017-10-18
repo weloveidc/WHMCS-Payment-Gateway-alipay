@@ -1,5 +1,5 @@
 <?php
-define("BASIC_PATH", realpath(__DIR__ ."/../../../../"));
+define("BASIC_PATH", realpath(__DIR__ ."/../../../../") . "/");
 if (file_exists(BASIC_PATH. "init.php")){
     require_once BASIC_PATH. "init.php";
 } else {
