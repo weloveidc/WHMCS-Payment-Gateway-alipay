@@ -4,7 +4,8 @@
 -->
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
-<img src="http://pan.baidu.com/share/qrcode?w=200&h=200&url={$url}" />
+<script src="modules/gateways/class/alipay_full/skin/default/arrests/qrcode.min.js"></script>
+<div class="alipay_qrcode"><span>正在生成二维码</span></div>
 <p>支付宝扫码支付</p>
 <script>
 jQuery(document).ready(function() {
@@ -23,7 +24,14 @@ jQuery(document).ready(function() {
 				}
 			}})
 	},1500)
-			
+	new QRCode($(".alipay_qrcode"), {
+			text: "{$url}",
+			width: 200,
+			height: 200,
+			colorDark : "#000000",
+			colorLight : "#ffffff",
+			correctLevel : QRCode.CorrectLevel.H
+	});
 })
 </script>
 <div class="modal fade" id="paidsuccess">
