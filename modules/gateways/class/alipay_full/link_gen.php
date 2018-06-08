@@ -79,11 +79,10 @@ class alipayfull_link {
                 $qrcode = $qrPay->create_erweima($response->qr_code);
                 if ($this->is_mobile()){
                     $skin_raw = file_get_contents(__DIR__ . "/skin/default/fpay_mobile.tpl");
-                    $skin_raw = str_replace('{$url}',urldecode($qrcode),$skin_raw);
                 } else {
                     $skin_raw = file_get_contents(__DIR__ . "/skin/default/fpay.tpl");
-                    $skin_raw = str_replace('{$url}',$qrcode,$skin_raw);
                 }
+                $skin_raw = str_replace('{$url}',urldecode($qrcode),$skin_raw);
                 return $skin_raw;
             case "FAILED":
                 return "支付宝创建订单二维码失败";

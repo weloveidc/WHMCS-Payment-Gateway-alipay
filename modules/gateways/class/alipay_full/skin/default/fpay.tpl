@@ -25,7 +25,7 @@ jQuery(document).ready(function() {
 			}})
 	},1500)
 	$(".alipay_qrcode span").remove()
-	new QRCode($(".alipay_qrcode"), {
+	new QRCode($(".alipay_qrcode")[0], {
 			text: "{$url}",
 			width: 200,
 			height: 200,
